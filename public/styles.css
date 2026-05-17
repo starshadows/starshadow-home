@@ -1,0 +1,327 @@
+:root {
+  color-scheme: light;
+  --primary: #08a8c5;
+  --primary-dark: #087f9b;
+  --ink: #142033;
+  --muted: #667386;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(255, 255, 255, 0.72);
+  --page-bg: #eaf5f8;
+  --shadow: 0 20px 60px rgba(80, 107, 132, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: "Roboto", "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(110deg, rgba(205, 218, 235, 0.9), rgba(246, 176, 213, 0.58) 42%, rgba(215, 131, 169, 0.65)),
+    linear-gradient(180deg, #f8fbfd 0%, var(--page-bg) 48%, #edf7f9 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sprite {
+  display: none;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: min(100% - 2rem, 78rem);
+  height: 4.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 32px rgba(69, 88, 111, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.toplinks {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 0.7rem;
+  min-width: 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 0.7rem;
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 8px 20px rgba(8, 168, 197, 0.26);
+}
+
+.toplinks {
+  gap: 0.2rem;
+  color: #263445;
+  font-weight: 700;
+}
+
+.toplinks a {
+  min-height: 2.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.toplinks a:hover {
+  color: var(--primary-dark);
+  background: rgba(8, 168, 197, 0.1);
+}
+
+main {
+  width: min(100% - 2rem, 78rem);
+  margin: 0 auto;
+  padding: 2rem 0 3.5rem;
+}
+
+.hero {
+  position: relative;
+  min-height: clamp(21rem, 46vh, 33rem);
+  overflow: hidden;
+  border-radius: 1.6rem;
+  box-shadow: var(--shadow);
+  background: #dfeef3;
+}
+
+.hero-image,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.74) 34%, rgba(255, 255, 255, 0.28) 72%),
+    linear-gradient(0deg, rgba(20, 32, 51, 0.18), rgba(20, 32, 51, 0.02));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(34rem, 100%);
+  min-height: inherit;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.avatar {
+  width: 5.75rem;
+  height: 5.75rem;
+  margin-bottom: 1.3rem;
+  border: 0.32rem solid rgba(255, 255, 255, 0.92);
+  border-radius: 1.35rem;
+  object-fit: cover;
+  box-shadow: 0 16px 36px rgba(42, 54, 76, 0.18);
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.9rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.intro {
+  max-width: 32rem;
+  margin: 1.15rem 0 0;
+  color: #314155;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.service-card {
+  min-height: 6.2rem;
+  padding: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  background: var(--card-bg);
+  box-shadow: 0 14px 34px rgba(80, 107, 132, 0.1);
+  backdrop-filter: blur(16px);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(8, 168, 197, 0.32);
+  box-shadow: 0 20px 42px rgba(58, 94, 121, 0.16);
+}
+
+.service-card:focus-visible {
+  outline: 3px solid rgba(8, 168, 197, 0.32);
+  outline-offset: 3px;
+}
+
+.icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 0.9rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #7bcbe2);
+  box-shadow: 0 10px 24px rgba(8, 168, 197, 0.22);
+}
+
+.icon svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: currentColor;
+}
+
+.icon.letter {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.service-text {
+  min-width: 0;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.service-text strong {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.service-text small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer {
+  width: min(100% - 2rem, 78rem);
+  margin: 0 auto;
+  padding: 0 0 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  color: rgba(20, 32, 51, 0.55);
+  font-size: 0.92rem;
+}
+
+footer span + span::before {
+  content: "/";
+  margin-right: 0.7rem;
+  color: rgba(20, 32, 51, 0.28);
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    width: 100%;
+    height: 4.2rem;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .toplinks a {
+    padding: 0.55rem 0.65rem;
+  }
+
+  main {
+    width: min(100% - 1rem, 78rem);
+    padding-top: 1rem;
+  }
+
+  .hero {
+    min-height: 28rem;
+    border-radius: 1.2rem;
+  }
+
+  .hero-image {
+    object-position: 58% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.65) 58%, rgba(255, 255, 255, 0.28)),
+      linear-gradient(0deg, rgba(20, 32, 51, 0.22), rgba(20, 32, 51, 0.02));
+  }
+
+  .hero-content {
+    justify-content: flex-end;
+    padding: 1.25rem;
+  }
+
+  .avatar {
+    width: 4.9rem;
+    height: 4.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .service-card {
+    min-height: 5.5rem;
+    border-radius: 0.85rem;
+  }
+}
