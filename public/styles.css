@@ -232,6 +232,18 @@ h1 {
   font-weight: 900;
 }
 
+.icon-logo {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(8, 168, 197, 0.16);
+}
+
+.icon-logo img {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: block;
+  object-fit: contain;
+}
+
 .service-text {
   min-width: 0;
   display: grid;
