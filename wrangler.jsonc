@@ -4,11 +4,5 @@
   "compatibility_date": "2026-05-20",
   "assets": {
     "directory": "./public"
-  },
-  "routes": [
-    {
-      "pattern": "home.starshadow.cc",
-      "custom_domain": true
-    }
-  ]
+  }
 }
