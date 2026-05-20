@@ -2,15 +2,15 @@
 
 `home.starshadow.cc` 的静态导航站源码。
 
-## Cloudflare Pages
+## Cloudflare Workers
 
-- Build command: 留空
-- Build output directory: `public`
+- Static assets directory: `public`
+- Worker name: `starshadow-home`
 - Custom domain: `home.starshadow.cc`
 
 所有服务入口都在 `public/index.html` 中维护。
 
-## 发布命令
+## GitHub 发布命令
 
 ```powershell
 git init -b main
@@ -20,8 +20,14 @@ git remote add origin https://github.com/starshadows/starshadow-home.git
 git push -u origin main
 ```
 
-如果需要先走 Direct Upload：
+## Workers 部署命令
 
 ```powershell
-npx wrangler pages deploy public --project-name starshadow-home --branch main
+npx wrangler deploy
+```
+
+或安装依赖后：
+
+```powershell
+npm run deploy
 ```
